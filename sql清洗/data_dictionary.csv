@@ -1,0 +1,28 @@
+﻿字段名,中文名,数据类型,取值范围/示例,业务说明,来源层级
+total_price,总价(万),"DECIMAL(10,2)",14.0 ~ 930.0,房源挂牌总价，核心定价指标,DWD
+unit_price,单价(元/㎡),"DECIMAL(10,2)",2781 ~ 41694,每平米单价，区域对比核心指标,DWD
+price_level,价格分级,VARCHAR(20),低总价/中总价/高总价/豪宅/学区房,按总价和单价综合分级，用于客群定位,DWD
+room_cnt,室数,INT,1 ~ 7,卧室数量，从房型解析,DWD
+hall_cnt,厅数,INT,0 ~ 3,客厅数量，从房型解析,DWD
+toilet_cnt,卫数,INT,0 ~ 4,卫生间数量，从房型解析,DWD
+floor_level,楼层,VARCHAR(20),低楼层/中楼层/高楼层,楼层位置描述,DWD
+floor_code,楼层编码,INT,1/2/3,楼层编码：1低/2中/3高，便于计算,DWD
+direction_clean,朝向(清洗后),VARCHAR(20),正南/东南/西南/南北通透/东/西/北/其他,标准化后的主朝向,DWD
+is_south_facing,是否朝南,TINYINT,0或1,是否包含南向：1是/0否，长沙核心溢价因素,DWD
+structure_type,户型结构,VARCHAR(20),平层/复式/错层,户型结构类型,DWD
+decoration_type,装修类型,VARCHAR(20),毛坯/简装/精装/其他,装修程度分类,DWD
+decoration_score,装修评分,INT,0/1/2/3,装修量化评分：毛坯1/简装2/精装3/其他0,DWD
+total_area,总面积(㎡),"DECIMAL(8,2)",28.84 ~ 383.19,建筑面积,DWD
+area_range,面积段,VARCHAR(20),小户型(<90)/中户型(90-144)/大户型(>144),面积分段，对应契税标准,DWD
+build_year,建造年份,INT,1985 ~ 2023,房屋竣工年份,DWD
+house_age,房龄(年),INT,3 ~ 41,2026-建造年份,DWD
+age_range,房龄段,VARCHAR(20),新房/次新房/老房/老旧房,房龄分段，影响贷款政策,DWD
+community,小区名称,VARCHAR(100),湘江700/八方小区B区等,所属小区名称,DWD
+district,地区,VARCHAR(50),岳麓/雨花/天心/开福/芙蓉/长沙县/望城/宁乡,行政区域,DWD
+has_elevator,是否有电梯,TINYINT,0或1,是否有电梯（本数据集全部为1）,DWD
+build_structure,建筑结构,VARCHAR(50),钢混结构/框架结构/砖混结构/混合结构/未知结构,建筑结构类型,DWD
+elevator_num,梯数,INT,1 ~ 20,电梯数量，从梯户比例解析,DWD
+household_num,户数,INT,1 ~ 56,每层户数，从梯户比例解析,DWD
+density,居住密度,"DECIMAL(5,2)",0.5 ~ 24.0,居住密度=户数/梯数，>4体验差，>15异常,DWD
+is_valid,是否有效,TINYINT,0或1,数据质量标记：1有效/0无效,DWD
+invalid_reason,无效原因,VARCHAR(200),梯户比例异常/面积房型不匹配/房龄异常/密度异常,无效数据的具体原因，用于审计追溯,DWD
