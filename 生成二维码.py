@@ -40,8 +40,8 @@ def create_qr(url, output_path, logo_path=None):
 
 # 使用示例
 if __name__ == "__main__":
-    # 本地文件路径（仅本机可用）
-    dashboard_url = "file:///D:/桌面2.0/数据分析/house_data/house_python.html"
+    # GitHub Pages URL（全局可访问）
+    dashboard_url = "https://1Lapin.github.io/house-data-analysis/house_python.html"
     
     # 输出路径
     output_path = "D:/桌面2.0/数据分析/house_data/house_python_qr.png"
